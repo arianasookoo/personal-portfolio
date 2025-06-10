@@ -10,6 +10,8 @@ body {
   color: var(--black);
   line-height: 1.6;
   min-height: 100vh;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 html {
@@ -26,44 +28,78 @@ html {
 }
 
 header {
-  flex-shrink: 0;
-}
-
-nav {
-    background-color: var(--pearl);
-    color: var(--black);
-    padding: 1rem;
-    position: fixed;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: absolute;
     top: 0;
-    float: right;
-    width: 100%;
-    z-index: 50;
-    backdrop-filter: blur(10px);
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Ensures items start from the left */
 }
 
-nav a {
+header img {
+    height: 70px;
+    margin-left: 0; /* Remove extra margin if not needed */
+    margin-right: 20px; /* Space between image and nav */
+    padding: 0;
+}
+
+header nav {
+    flex: 1; /* Take remaining space */
+    display: flex;
+    justify-content: flex-end; /* Align nav items to the right */
+    align-items: center;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header li {
+    margin: 0 20px 0 0; /* Space between list items */
+}
+
+header * {
+    display: unset; /* Remove forced inline display */
+}
+
+header li a {
     color: var(--black);
     text-decoration: none;
     margin: 0 1rem;
-    font-size: 12px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    transition: color 0.3s ease;
 }
 
-nav a:hover {
+header li a:hover {
     text-decoration: underline;
 }
 
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 0;
+section {
+    margin: 2rem 0;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+#hero-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+#about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
