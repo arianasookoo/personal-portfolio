@@ -85,7 +85,7 @@ header li a {
 }
 
 header li a:hover {
-    text-decoration: underline;
+    color: var(--green);
 }
 
 .logo {
@@ -101,7 +101,7 @@ header li a:hover {
 }
 
 .avatar:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* =================
@@ -109,7 +109,7 @@ SECTIONS
 ==================== */
 section {
     padding: 4rem 2rem;
-    min-height: 80vh; /* Reduce the default minimum height */
+    min-height: 100vh; /* Reduce the default minimum height */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -230,7 +230,7 @@ PROJECTS
 }
 
 .project-filters h3:hover{
-	color: var(--black);
+	color: var(--green);
 }
 
 /* =================
