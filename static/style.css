@@ -37,14 +37,14 @@ html {
 HEADER + NAVIGATION
 ==================== */
 header {
-    position: fixed;
+  position: fixed;
 	padding: 1rem;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly; /* Ensures items start from the left */
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly; /* Ensures items start from the left */
 	margin: auto;
 	z-index: 1000; /* Ensures the header is above other content */
 	background: #EDE9DD;
@@ -53,8 +53,8 @@ header {
 
 header nav {
 	/* margin-top: 1.5rem; */
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 	background-color: var(--white);
 	border-radius: 3rem;
 	height: 4rem;
@@ -71,17 +71,17 @@ header ul {
 }
 
 header li {
-    font-size: 1rem;
-	margin: 0 2rem;
+  font-size: 1rem;
+  margin: 0 2rem;
 }
 
 header li a {
-    text-decoration: none;
-    color: var(--grey);
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: var(--grey);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  transition: color 0.3s ease;
 }
 
 header li a:hover {
@@ -257,6 +257,81 @@ GRIDS
     justify-content: space-evenly;
     padding: 1rem;
     margin-bottom: 1rem;
+}
+
+/* =================
+PROJECT CARDS
+==================== */
+div.gallery {
+  border: 1px solid var(--grey);
+  border-radius: 10px;
+  margin: 5px;
+}
+
+div.gallery:hover {
+  border: 1px solid var(--green);
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.gallery h3 {
+  padding: 15px 15px 0 15px;
+  text-align: left;
+  text-decoration: none;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: left;
+  color: var(--black);
+  font-family: "helvetica", sans-serif;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  /* padding: 0 6px; */
+  float: left;
+  width: 24.99999%;
+}
+
+.responsive a {
+  text-decoration: none;
+  color: var(--black);
+  font-family: "helvetica", sans-serif;
+}
+
+.image{
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* =================
