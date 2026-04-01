@@ -1,38 +1,50 @@
 // Project filter functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const devFilter = document.getElementById('dev-filter');
-    const uxFilter = document.getElementById('ux-filter');
-    const graphicFilter = document.getElementById('graphic-filter');
 
-    const devProj = document.getElementById('development-proj');
-    const uxProj = document.getElementById('ux-proj');
-    const graphicProj = document.getElementById('graphic-proj');
-    const videoProj = document.getElementById('video-proj');
+document.addEventListener('DOMContentLoaded', () => {
+  const filterHeadings = Array.from(document.querySelectorAll('.project-filters h3'));
 
-    // Function to hide all projects
-    function hideAllProjects() {
-        devProj.style.display = 'none';
-        uxProj.style.display = 'none';
-        graphicProj.style.display = 'none';
-        videoProj.style.display = 'none';
-    }
+  // Matches the filter text to its related project container id.
+  const filterToProjectId = {
+    DEVELOPMENT: 'development-proj',
+    'UX/UI DESIGN': 'ux-proj',
+    'GRAPHIC DESIGN': 'graphic-proj',
+    VIDEOGRAPHY: 'video-proj'
+  };
 
-    // Initially hide all projects
-    hideAllProjects();
+  const projectContainers = Object.values(filterToProjectId)
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
 
-    // Add event listeners
-    devFilter.addEventListener('click', function() {
-        hideAllProjects();
-        devProj.style.display = 'block';
+  const hideAllProjects = () => {
+    projectContainers.forEach((container) => {
+      container.style.display = 'none';
     });
+  };
 
-    uxFilter.addEventListener('click', function() {
-        hideAllProjects();
-        uxProj.style.display = 'block';
+  const resetFilterStyles = () => {
+    filterHeadings.forEach((heading) => {
+      heading.style.color = '';
     });
+  };
 
-    graphicFilter.addEventListener('click', function() {
-        hideAllProjects();
-        graphicProj.style.display = 'block';
+  // Hide all projects until a filter is selected.
+  hideAllProjects();
+
+  filterHeadings.forEach((heading) => {
+    heading.addEventListener('click', () => {
+      const filterLabel = heading.textContent.trim().toUpperCase();
+      const targetId = filterToProjectId[filterLabel];
+      const targetContainer = targetId ? document.getElementById(targetId) : null;
+
+      hideAllProjects();
+      resetFilterStyles();
+
+      // Use the same color as the hover state to indicate active filter.
+      heading.style.color = 'var(--green)';
+
+      if (targetContainer) {
+        targetContainer.style.display = 'block';
+      }
     });
+  });
 });
