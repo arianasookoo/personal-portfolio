@@ -5,11 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Matches the filter text to its related project container id.
   const filterToProjectId = {
-    'DEVELOPMENT': 'development-proj',
-    'UX/UI DESIGN': 'ux-proj',
-    'GRAPHIC DESIGN': 'graphic-proj',
-    'VIDEOGRAPHY': 'video-proj',
-    'GPTs': 'gpt-proj'
+    'CODING PROJECTS': 'coding-proj',
+    'DIGITAL DESIGN': 'design-proj',
+    'GPTS': 'gpt-proj'
   };
 
   const projectContainers = Object.values(filterToProjectId)
