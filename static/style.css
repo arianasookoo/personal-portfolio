@@ -323,9 +323,14 @@ div.gallery .fi {
 }
 
 .responsive {
+  
   /* padding: 0 6px; */
   float: left;
-  width: 25%;
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .responsive a {
@@ -362,7 +367,7 @@ div.gallery .fi {
 /* =================
 IMAGE STACK
 ==================== */
-
+/* 
 .image-stack {
   position: relative;
   width: 30rem;
@@ -382,7 +387,7 @@ IMAGE STACK
 }
 
 /* Delay each image for the cycle effect */
-.image-stack img:nth-child(1) {
+/* .image-stack img:nth-child(1) {
   animation-delay: 0s;
 }
 .image-stack img:nth-child(2) {
@@ -413,4 +418,4 @@ IMAGE STACK
     opacity: 0;
     z-index: 1;
   }
-}
+} */
