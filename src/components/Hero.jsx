@@ -26,7 +26,7 @@ export default function Hero() {
       </div>
       <div className="flex-shrink-0">
         <img
-          src="/images/portfolio_selfimage.png"
+          src={`${import.meta.env.BASE_URL}images/portfolio_selfimage.png`}
           alt="Ariana Miriam Cartoon Portrait"
           className="h-[35rem] w-auto transition-all duration-300 hover:scale-105"
         />
